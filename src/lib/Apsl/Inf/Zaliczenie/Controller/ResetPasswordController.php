@@ -37,9 +37,7 @@ final class ResetPasswordController extends BasePage
             if ($this->formValidator->validateEmail($email, $body['errors'])) {
                 $generatedHash = sha1(time());
                 $this->session->setValue(self::HASH, $generatedHash);
-                $router = require 'config/routing.php';
-                $link = $this->request->getCurrentHost()
-                    . array_search(NewPasswordController::class, $router)
+                $link = $this->request->getRouteUrl(NewPasswordController::class, true)
                     . "?"
                     . self::HASH
                     . "="

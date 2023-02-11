@@ -61,4 +61,15 @@ class Request
     {
         return $_SERVER['HTTP_HOST'];
     }
+
+    public function getRouteUrl(string $className, bool $withServer = false): string
+    {
+        $router = require 'config/routing.php';
+        $url = '';
+        if ($withServer) {
+            $url .= $this->getCurrentHost();
+        }
+        $url .= array_search($className, $router);
+        return $url;
+    }
 }
