@@ -5,7 +5,7 @@
 # Installation
 
 1. Clone this project.
-2. Enter cloned directory e.g. ```cd 01-hello-docker```.
+2. Enter cloned directory e.g. ```cd phpzaliczenie```.
 3. Enter docker subdirectory: ```cd docker```
 4. Run ```docker-compose up -d```
 5. Enter php container: ```docker-compose exec php bash```

@@ -39,10 +39,13 @@ final class FormValidator
 
     public function validateEmail(string $email, array &$errors): bool
     {
-        $email = trim($email);
         if ($email === '') {
             $errors[] = 'Pole email jest puste.';
-        } elseif (filter_var($email, filter: FILTER_VALIDATE_EMAIL) === false) {
+        }
+        if ($email !== trim($email)) {
+            $errors[] = 'Email zawiera spację';
+        }
+        if (filter_var($email, filter: FILTER_VALIDATE_EMAIL) === false) {
             $errors[] = 'Zły format podanego emaila';
         }
         if (empty($errors)) {

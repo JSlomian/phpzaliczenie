@@ -9,6 +9,7 @@ use Symfony\Component\Mime\Email;
 
 final class MailService
 {
+    private const EMAIL = "apsl-dev@gmx.com";
     private const DSN = "smtp://apsl-dev@gmx.com:apslDEV2023@mail.gmx.com:587";
     private Mailer $mailer;
     public function __construct()
@@ -20,7 +21,7 @@ final class MailService
     public function sendEmail(string $email, string $message, &$errors): void
     {
         $emailObj = (new Email())
-            ->from($email)
+            ->from(self::EMAIL)
             ->to($email)
             ->subject('Resetowanie hasła')
             ->html($message);
