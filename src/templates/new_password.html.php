@@ -17,22 +17,22 @@
     </style>
 </head>
 <body>
-<?php if (isset($body['message'])): ?>
-<p class="success"><?= $body['message'] ?></p>
+<?php if (isset($message)): ?>
+<p class="success"><?= $message ?></p>
 <?php endif ?>
-<?php foreach ($body['errors'] ?? [] as $error) : ?>
+<?php foreach ($errors ?? [] as $error) : ?>
 <p class="error"><?= $error ?></p>
 <?php endforeach ?>
-<?php if (isset($body['form']['show']) && $body['form']['show'] === true) : ?>
+<?php if (isset($form['show']) && $form['show'] === true) : ?>
 <form method="post">
     <ul>
         <li>
             <label for="password">Podaj hasło</label>
-            <input type="text" name="password1" id="password" value="<?= $body['form']['password1'] ?? '' ?>">
+            <input type="text" name="password1" id="password" value="<?= $form['password1'] ?? '' ?>">
         </li>
         <li>
             <label for="password_confirm">Podaj hasło ponownie</label>
-            <input type="text" name="password2" id="password_confirm" value="<?= $body['form']['password2'] ?? '' ?>">
+            <input type="text" name="password2" id="password_confirm" value="<?= $form['password2'] ?? '' ?>">
         </li>
         <li>
             <button type="submit">Zmień hasło</button>

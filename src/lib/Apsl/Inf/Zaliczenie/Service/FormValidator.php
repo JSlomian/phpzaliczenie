@@ -25,10 +25,10 @@ final class FormValidator
         if (preg_match('/[0-9]/', $password) !== 1) {
             $errors[] = 'Hasło nie zawiera liczb.';
         }
-        if (preg_match('/[^\w]/', $password !== 1)) {
+        if (preg_match('/[^a-zA-Z0-9]/', $password) !== 1) {
             $errors[] = 'Hasło nie zawiera znaków specjalnych';
         }
-        if (preg_match('/(.*?).{7,}/', $password !== 1)) {
+        if (preg_match('/^.{8,}$/', $password) !== 1) {
             $errors[] = 'Hasło jest krótsze niż 8 znaków';
         }
         if (empty($errors)) {

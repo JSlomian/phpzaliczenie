@@ -54,6 +54,6 @@ final class NewPasswordController extends BasePage
             $body['message'] = "Hasło by się zmieniło";
             $this->session->setValue(self::HASH, null);
         }
-        $this->response->setBody($this->useTemplate('templates/new_password.html.php', ['body' => $body]));
+        $this->response->setBody($this->useTemplate('templates/new_password.html.php', $body));
     }
 }

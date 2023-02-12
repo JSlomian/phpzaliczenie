@@ -42,11 +42,11 @@ final class ResetPasswordController extends BasePage
                     . self::HASH
                     . "="
                     . $generatedHash;
-                $emailMessage = "Link do zresetowania hasła: <a href=\"//$link\">$link</a>";
+                $emailMessage = "Link do zresetowania hasła: <a href=\"$link\">$link</a>";
                 $body['message'] = "sprawdź e-mail w celu zresetowania hasła";
                 $this->mailService->sendEmail($email, $emailMessage, $errors);
             }
         }
-        $this->response->setBody($this->useTemplate('templates/reset_password.html.php', ['body' => $body]));
+        $this->response->setBody($this->useTemplate('templates/reset_password.html.php', $body));
     }
 }

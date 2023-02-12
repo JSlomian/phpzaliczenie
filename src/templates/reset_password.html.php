@@ -17,17 +17,17 @@
     </style>
 </head>
 <body>
-<?php if (isset($body['message'])): ?>
-    <p class="success"><?= $body['message'] ?></p>
+<?php if (isset($message)): ?>
+    <p class="success"><?= $message ?></p>
 <?php endif ?>
-<?php foreach ($body['errors'] ?? [] as $error) : ?>
+<?php foreach ($errors ?? [] as $error) : ?>
     <p class="error"><?= $error ?></p>
 <?php endforeach ?>
 <form method="post">
     <ul>
         <li>
             <label for="email_address">Adres Email</label>
-            <input type="email" name="email" id="email_address" value="<?= $body['form']['email'] ?>">
+            <input type="email" name="email" id="email_address" value="<?= $form['email'] ?? "" ?>">
         </li>
         <li>
             <button type="submit">Zresetuj hasło</button>

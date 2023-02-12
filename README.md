@@ -10,7 +10,7 @@
 4. Run ```docker-compose up -d```
 5. Enter php container: ```docker-compose exec php bash```
 6. Download composer into project: ```curl -sS https://getcomposer.org/installer | php```
-7. Run ```./composer.phar install```
+7. Run ```php ./composer.phar install```
 8. Exit php container: ```exit```
 
 # Launching project
