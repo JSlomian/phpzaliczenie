@@ -24,7 +24,6 @@
     <p class="error"><?= $error ?></p>
 <?php endforeach ?>
 <?php foreach ($inputs ?? [] as $input) : ?>
-<?php var_dump($input) ?>
 <?= $input ?>
 <?php endforeach ?>
 </body>
